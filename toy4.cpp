@@ -531,72 +531,73 @@ Module *MCJITHelper::getModuleForNewFunction() {
 }
 
 void *MCJITHelper::getPointerToFunction(Function *F) {
-  // See if an existing instance of MCJIT has this function.
-  EngineVector::iterator begin = Engines.begin();
-  EngineVector::iterator end = Engines.end();
-  EngineVector::iterator it;
-  for (it = begin; it != end; ++it) {
-    void *P = (*it)->getPointerToFunction(F);
-    if (P)
-      return P;
-  }
+    // See if an existing instance of MCJIT has this function.
+    EngineVector::iterator begin = Engines.begin();
+    EngineVector::iterator end = Engines.end();
+    EngineVector::iterator it;
+    for (it = begin; it != end; ++it) {
+	void *P = (*it)->getPointerToFunction(F);
 
-  // If we didn't find the function, see if we can generate it.
-  if (OpenModule) {
-    std::string ErrStr;
-    ExecutionEngine *NewEngine =
-        EngineBuilder(std::unique_ptr<Module>(OpenModule))
-            .setErrorStr(&ErrStr)
-            .setMCJITMemoryManager(std::unique_ptr<HelpingMemoryManager>(
-                new HelpingMemoryManager(this)))
-            .create();
-    if (!NewEngine) {
-      fprintf(stderr, "Could not create ExecutionEngine: %s\n", ErrStr.c_str());
-      exit(1);
+	if (P) return P;
+
     }
 
-    // Create a function pass manager for this engine
-    auto *FPM = new legacy::FunctionPassManager(OpenModule);
+    // If we didn't find the function, see if we can generate it.
+    if (OpenModule) {
+	std::string ErrStr;
+	ExecutionEngine *NewEngine =
+	    EngineBuilder(std::unique_ptr<Module>(OpenModule))
+	    .setErrorStr(&ErrStr)
+	    .setMCJITMemoryManager(std::unique_ptr<HelpingMemoryManager>(
+									 new HelpingMemoryManager(this)))
+	    .create();
+	if (!NewEngine) {
+	    fprintf(stderr, "Could not create ExecutionEngine: %s\n", ErrStr.c_str());
+	    exit(1);
+	}
 
-    // Set up the optimizer pipeline.  Start with registering info about how the
-    // target lays out data structures.
-    OpenModule->setDataLayout(NewEngine->getDataLayout());
-    FPM->add(new DataLayoutPass());
-    // Provide basic AliasAnalysis support for GVN.
-    FPM->add(createBasicAliasAnalysisPass());
-    // Promote allocas to registers.
-    FPM->add(createPromoteMemoryToRegisterPass());
-    // Do simple "peephole" optimizations and bit-twiddling optzns.
-    FPM->add(createInstructionCombiningPass());
-    // Reassociate expressions.
-    FPM->add(createReassociatePass());
-    // Eliminate Common SubExpressions.
-    FPM->add(createGVNPass());
-    // Simplify the control flow graph (deleting unreachable blocks, etc).
-    FPM->add(createCFGSimplificationPass());
-    FPM->doInitialization();
+	// Create a function pass manager for this engine
+	auto *FPM = new legacy::FunctionPassManager(OpenModule);
 
-    // For each function in the module
-    Module::iterator it;
-    Module::iterator end = OpenModule->end();
-    for (it = OpenModule->begin(); it != end; ++it) {
-      // Run the FPM on this function
-      FPM->run(*it);
+	// Set up the optimizer pipeline.  Start with registering info about how the
+	// target lays out data structures.
+	OpenModule->setDataLayout(NewEngine->getDataLayout());
+	FPM->add(new DataLayoutPass());
+	// Provide basic AliasAnalysis support for GVN.
+	FPM->add(createBasicAliasAnalysisPass());
+	// Promote allocas to registers.
+	FPM->add(createPromoteMemoryToRegisterPass());
+	// Do simple "peephole" optimizations and bit-twiddling optzns.
+	FPM->add(createInstructionCombiningPass());
+	// Reassociate expressions.
+	FPM->add(createReassociatePass());
+	// Eliminate Common SubExpressions.
+	FPM->add(createGVNPass());
+	// Simplify the control flow graph (deleting unreachable blocks, etc).
+	FPM->add(createCFGSimplificationPass());
+	FPM->doInitialization();
+
+	// For each function in the module
+	Module::iterator it;
+	Module::iterator end = OpenModule->end();
+	for (it = OpenModule->begin(); it != end; ++it) {
+	    // Run the FPM on this function
+	    FPM->run(*it);
+	}
+
+	// We don't need this anymore
+	delete FPM;
+
+	OpenModule = NULL;
+	Engines.push_back(NewEngine);
+	NewEngine->finalizeObject();
+	return NewEngine->getPointerToFunction(F);
     }
-
-    // We don't need this anymore
-    delete FPM;
-
-    OpenModule = NULL;
-    Engines.push_back(NewEngine);
-    NewEngine->finalizeObject();
-    return NewEngine->getPointerToFunction(F);
-  }
-  return NULL;
+    return NULL;
 }
 
 void *MCJITHelper::getSymbolAddress(const std::string &Name) {
-  // Look for the symbol in each of our execution engines.
+    // Look for the symbol in each of our execution engines.
   EngineVector::iterator begin = Engines.begin();
   EngineVector::iterator end = Engines.end();
   EngineVector::iterator it;
@@ -782,21 +783,23 @@ static void HandleExtern() {
 }
 
 static void HandleTopLevelExpression() {
-  // Evaluate a top-level expression into an anonymous function.
-  if (FunctionAST *F = ParseTopLevelExpr()) {
-    if (Function *LF = F->Codegen()) {
-      // JIT the function, returning a function pointer.
-      void *FPtr = JITHelper->getPointerToFunction(LF);
+    // Evaluate a top-level expression into an anonymous function.
+    if (FunctionAST *F = ParseTopLevelExpr()) {
+	if (Function *LF = F->Codegen()) {
+	    LF->dump(); // Dump the function for exposition purposes. 
 
-      // Cast it to the right type (takes no arguments, returns a double) so we
-      // can call it as a native function.
-      double (*FP)() = (double (*)())(intptr_t)FPtr;
-      fprintf(stderr, "Evaluated to %f\n", FP());
+	    // JIT the function, returning a function pointer.
+	    void *FPtr = JITHelper->getPointerToFunction(LF);
+
+	    // Cast it to the right type (takes no arguments, returns a double) so we
+	    // can call it as a native function.
+	    double (*FP)() = (double (*)())(intptr_t)FPtr;
+	    fprintf(stderr, "Evaluated to %f\n", FP());
+	}
+    } else {
+	// Skip token for error recovery.
+	getNextToken();
     }
-  } else {
-    // Skip token for error recovery.
-    getNextToken();
-  }
 }
 
 /// top ::= definition | external | expression | ';'
