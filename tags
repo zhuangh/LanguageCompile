@@ -1,0 +1,209 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Args	toy.cpp	/^  std::vector<ExprAST*> Args;$/;"	m	class:__anon3::CallExprAST	file:
+Args	toy.cpp	/^  std::vector<std::string> Args;$/;"	m	class:__anon3::PrototypeAST	file:
+Args	toy3.cpp	/^  std::vector<ExprAST*> Args;$/;"	m	class:__anon2::CallExprAST	file:
+Args	toy3.cpp	/^  std::vector<std::string> Args;$/;"	m	class:__anon2::PrototypeAST	file:
+Args	toy4.cpp	/^  std::vector<ExprAST *> Args;$/;"	m	class:__anon1::CallExprAST	file:
+Args	toy4.cpp	/^  std::vector<std::string> Args;$/;"	m	class:__anon1::PrototypeAST	file:
+BinaryExprAST	toy.cpp	/^  BinaryExprAST(char op, ExprAST *lhs, ExprAST *rhs) {}$/;"	f	class:__anon3::BinaryExprAST
+BinaryExprAST	toy.cpp	/^class BinaryExprAST : public ExprAST {$/;"	c	namespace:__anon3	file:
+BinaryExprAST	toy3.cpp	/^  BinaryExprAST(char op, ExprAST *lhs, ExprAST *rhs) $/;"	f	class:__anon2::BinaryExprAST
+BinaryExprAST	toy3.cpp	/^class BinaryExprAST : public ExprAST {$/;"	c	namespace:__anon2	file:
+BinaryExprAST	toy4.cpp	/^  BinaryExprAST(char op, ExprAST *lhs, ExprAST *rhs)$/;"	f	class:__anon1::BinaryExprAST
+BinaryExprAST	toy4.cpp	/^class BinaryExprAST : public ExprAST {$/;"	c	namespace:__anon1	file:
+BinopPrecedence	toy.cpp	/^static std::map<char, int> BinopPrecedence;$/;"	v	file:
+BinopPrecedence	toy3.cpp	/^static std::unordered_map<char, int> BinopPrecedence;$/;"	v	file:
+BinopPrecedence	toy4.cpp	/^static std::map<char, int> BinopPrecedence;$/;"	v	file:
+Body	toy3.cpp	/^  ExprAST *Body;$/;"	m	class:__anon2::FunctionAST	file:
+Body	toy4.cpp	/^  ExprAST *Body;$/;"	m	class:__anon1::FunctionAST	file:
+CallExprAST	toy.cpp	/^  CallExprAST(const std::string &callee, std::vector<ExprAST*> &args)$/;"	f	class:__anon3::CallExprAST
+CallExprAST	toy.cpp	/^class CallExprAST : public ExprAST {$/;"	c	namespace:__anon3	file:
+CallExprAST	toy3.cpp	/^  CallExprAST(const std::string &callee, std::vector<ExprAST*> &args)$/;"	f	class:__anon2::CallExprAST
+CallExprAST	toy3.cpp	/^class CallExprAST : public ExprAST {$/;"	c	namespace:__anon2	file:
+CallExprAST	toy4.cpp	/^  CallExprAST(const std::string &callee, std::vector<ExprAST *> &args)$/;"	f	class:__anon1::CallExprAST
+CallExprAST	toy4.cpp	/^class CallExprAST : public ExprAST {$/;"	c	namespace:__anon1	file:
+Callee	toy.cpp	/^  std::string Callee;$/;"	m	class:__anon3::CallExprAST	file:
+Callee	toy3.cpp	/^  std::string Callee;$/;"	m	class:__anon2::CallExprAST	file:
+Callee	toy4.cpp	/^  std::string Callee;$/;"	m	class:__anon1::CallExprAST	file:
+Codegen	toy3.cpp	/^Function *FunctionAST::Codegen() {$/;"	f	class:FunctionAST
+Codegen	toy3.cpp	/^Function *PrototypeAST::Codegen() {$/;"	f	class:PrototypeAST
+Codegen	toy3.cpp	/^Value *BinaryExprAST::Codegen() {$/;"	f	class:BinaryExprAST
+Codegen	toy3.cpp	/^Value *CallExprAST::Codegen() {$/;"	f	class:CallExprAST
+Codegen	toy3.cpp	/^Value *NumberExprAST::Codegen() {$/;"	f	class:NumberExprAST
+Codegen	toy3.cpp	/^Value *VariableExprAST::Codegen() {$/;"	f	class:VariableExprAST
+Codegen	toy4.cpp	/^Function *FunctionAST::Codegen() {$/;"	f	class:FunctionAST
+Codegen	toy4.cpp	/^Function *PrototypeAST::Codegen() {$/;"	f	class:PrototypeAST
+Codegen	toy4.cpp	/^Value *BinaryExprAST::Codegen() {$/;"	f	class:BinaryExprAST
+Codegen	toy4.cpp	/^Value *CallExprAST::Codegen() {$/;"	f	class:CallExprAST
+Codegen	toy4.cpp	/^Value *NumberExprAST::Codegen() {$/;"	f	class:NumberExprAST
+Codegen	toy4.cpp	/^Value *VariableExprAST::Codegen() {$/;"	f	class:VariableExprAST
+Context	toy4.cpp	/^  LLVMContext &Context;$/;"	m	class:MCJITHelper	file:
+CurTok	toy.cpp	/^static int CurTok;$/;"	v	file:
+CurTok	toy3.cpp	/^static int CurTok;$/;"	v	file:
+CurTok	toy4.cpp	/^static int CurTok;$/;"	v	file:
+EngineVector	toy4.cpp	/^  typedef std::vector<ExecutionEngine *> EngineVector;$/;"	t	class:MCJITHelper	file:
+Engines	toy4.cpp	/^  EngineVector Engines;$/;"	m	class:MCJITHelper	file:
+Error	toy.cpp	/^ExprAST *Error(const char *Str) { fprintf(stderr, "Error: %s\\n", Str);return 0;}$/;"	f
+Error	toy3.cpp	/^ExprAST *Error(const char *Str) { fprintf(stderr, "Error: %s\\n", Str);return 0;}$/;"	f
+Error	toy4.cpp	/^ExprAST *Error(const char *Str) {$/;"	f
+ErrorF	toy3.cpp	/^FunctionAST *ErrorF(const char *Str) { Error(Str); return 0; }$/;"	f
+ErrorF	toy4.cpp	/^FunctionAST *ErrorF(const char *Str) {$/;"	f
+ErrorP	toy.cpp	/^PrototypeAST *ErrorP(const char *Str) { Error(Str); return 0; }$/;"	f
+ErrorP	toy3.cpp	/^PrototypeAST *ErrorP(const char *Str) { Error(Str); return 0; }$/;"	f
+ErrorP	toy4.cpp	/^PrototypeAST *ErrorP(const char *Str) {$/;"	f
+ErrorV	toy3.cpp	/^Value *ErrorV(const char *Str) { Error(Str); return 0; }$/;"	f
+ErrorV	toy4.cpp	/^Value *ErrorV(const char *Str) {$/;"	f
+ExprAST	toy.cpp	/^class ExprAST {$/;"	c	namespace:__anon3	file:
+ExprAST	toy3.cpp	/^class ExprAST {$/;"	c	namespace:__anon2	file:
+ExprAST	toy4.cpp	/^class ExprAST {$/;"	c	namespace:__anon1	file:
+FunctionAST	toy.cpp	/^  FunctionAST(PrototypeAST *proto, ExprAST *body) {}$/;"	f	class:__anon3::FunctionAST
+FunctionAST	toy.cpp	/^class FunctionAST {$/;"	c	namespace:__anon3	file:
+FunctionAST	toy3.cpp	/^  FunctionAST(PrototypeAST *proto, ExprAST *body)$/;"	f	class:__anon2::FunctionAST
+FunctionAST	toy3.cpp	/^class FunctionAST {$/;"	c	namespace:__anon2	file:
+FunctionAST	toy4.cpp	/^  FunctionAST(PrototypeAST *proto, ExprAST *body) : Proto(proto), Body(body) {}$/;"	f	class:__anon1::FunctionAST
+FunctionAST	toy4.cpp	/^class FunctionAST {$/;"	c	namespace:__anon1	file:
+GenerateUniqueName	toy4.cpp	/^std::string GenerateUniqueName(const char *root) {$/;"	f
+GetTokPrecedence	toy.cpp	/^static int GetTokPrecedence() {$/;"	f	file:
+GetTokPrecedence	toy3.cpp	/^static int GetTokPrecedence() {$/;"	f	file:
+GetTokPrecedence	toy4.cpp	/^static int GetTokPrecedence() {$/;"	f	file:
+HandleDefinition	toy.cpp	/^static void HandleDefinition() {$/;"	f	file:
+HandleDefinition	toy3.cpp	/^static void HandleDefinition() {$/;"	f	file:
+HandleDefinition	toy4.cpp	/^static void HandleDefinition() {$/;"	f	file:
+HandleExtern	toy.cpp	/^static void HandleExtern() {$/;"	f	file:
+HandleExtern	toy3.cpp	/^static void HandleExtern() {$/;"	f	file:
+HandleExtern	toy4.cpp	/^static void HandleExtern() {$/;"	f	file:
+HandleTopLevelExpression	toy.cpp	/^static void HandleTopLevelExpression() {$/;"	f	file:
+HandleTopLevelExpression	toy3.cpp	/^static void HandleTopLevelExpression() {$/;"	f	file:
+HandleTopLevelExpression	toy4.cpp	/^static void HandleTopLevelExpression() {$/;"	f	file:
+HelpingMemoryManager	toy4.cpp	/^  HelpingMemoryManager(MCJITHelper *Helper) : MasterHelper(Helper) {}$/;"	f	class:HelpingMemoryManager
+HelpingMemoryManager	toy4.cpp	/^class HelpingMemoryManager : public SectionMemoryManager {$/;"	c	file:
+IdentifierStr	toy.cpp	/^static std::string IdentifierStr;  \/\/ Filled in if tok_identifier$/;"	v	file:
+IdentifierStr	toy3.cpp	/^static std::string IdentifierStr;  \/\/ Filled in if tok_identifier$/;"	v	file:
+IdentifierStr	toy4.cpp	/^static std::string IdentifierStr; \/\/ Filled in if tok_identifier$/;"	v	file:
+JITHelper	toy4.cpp	/^static MCJITHelper *JITHelper;$/;"	v	file:
+LHS	toy3.cpp	/^  ExprAST *LHS, *RHS;$/;"	m	class:__anon2::BinaryExprAST	file:
+LHS	toy4.cpp	/^  ExprAST *LHS, *RHS;$/;"	m	class:__anon1::BinaryExprAST	file:
+MCJITHelper	toy4.cpp	/^  MCJITHelper(LLVMContext &C) : Context(C), OpenModule(NULL) {}$/;"	f	class:MCJITHelper
+MCJITHelper	toy4.cpp	/^class MCJITHelper {$/;"	c	file:
+MainLoop	toy.cpp	/^static void MainLoop() {$/;"	f	file:
+MainLoop	toy3.cpp	/^static void MainLoop() {$/;"	f	file:
+MainLoop	toy4.cpp	/^static void MainLoop() {$/;"	f	file:
+MakeLegalFunctionName	toy4.cpp	/^std::string MakeLegalFunctionName(std::string Name) {$/;"	f
+MasterHelper	toy4.cpp	/^  MCJITHelper *MasterHelper;$/;"	m	class:HelpingMemoryManager	file:
+ModuleVector	toy4.cpp	/^  typedef std::vector<Module *> ModuleVector;$/;"	t	class:MCJITHelper	file:
+Modules	toy4.cpp	/^  ModuleVector Modules;$/;"	m	class:MCJITHelper	file:
+Name	toy.cpp	/^  std::string Name;$/;"	m	class:__anon3::PrototypeAST	file:
+Name	toy.cpp	/^  std::string Name;$/;"	m	class:__anon3::VariableExprAST	file:
+Name	toy3.cpp	/^  std::string Name;$/;"	m	class:__anon2::PrototypeAST	file:
+Name	toy3.cpp	/^  std::string Name;$/;"	m	class:__anon2::VariableExprAST	file:
+Name	toy4.cpp	/^  std::string Name;$/;"	m	class:__anon1::PrototypeAST	file:
+Name	toy4.cpp	/^  std::string Name;$/;"	m	class:__anon1::VariableExprAST	file:
+NamedValues	toy3.cpp	/^static std::unordered_map<std::string, Value*> NamedValues;$/;"	v	file:
+NamedValues	toy4.cpp	/^static std::map<std::string, Value *> NamedValues;$/;"	v	file:
+NumVal	toy.cpp	/^static double NumVal;              \/\/ Filled in if tok_number$/;"	v	file:
+NumVal	toy3.cpp	/^static double NumVal;              \/\/ Filled in if tok_number$/;"	v	file:
+NumVal	toy4.cpp	/^static double NumVal;             \/\/ Filled in if tok_number$/;"	v	file:
+NumberExprAST	toy.cpp	/^  NumberExprAST(double val) {}$/;"	f	class:__anon3::NumberExprAST
+NumberExprAST	toy.cpp	/^class NumberExprAST : public ExprAST {$/;"	c	namespace:__anon3	file:
+NumberExprAST	toy3.cpp	/^  NumberExprAST(double val) : Val(val) {}$/;"	f	class:__anon2::NumberExprAST
+NumberExprAST	toy3.cpp	/^class NumberExprAST : public ExprAST {$/;"	c	namespace:__anon2	file:
+NumberExprAST	toy4.cpp	/^  NumberExprAST(double val) : Val(val) {}$/;"	f	class:__anon1::NumberExprAST
+NumberExprAST	toy4.cpp	/^class NumberExprAST : public ExprAST {$/;"	c	namespace:__anon1	file:
+Op	toy3.cpp	/^  char Op;$/;"	m	class:__anon2::BinaryExprAST	file:
+Op	toy4.cpp	/^  char Op;$/;"	m	class:__anon1::BinaryExprAST	file:
+OpenModule	toy4.cpp	/^  Module *OpenModule;$/;"	m	class:MCJITHelper	file:
+ParseBinOpRHS	toy.cpp	/^static ExprAST *ParseBinOpRHS(int ExprPrec, ExprAST *LHS) {$/;"	f	file:
+ParseBinOpRHS	toy3.cpp	/^static ExprAST *ParseBinOpRHS(int ExprPrec, ExprAST *LHS) {$/;"	f	file:
+ParseBinOpRHS	toy4.cpp	/^static ExprAST *ParseBinOpRHS(int ExprPrec, ExprAST *LHS) {$/;"	f	file:
+ParseDefinition	toy.cpp	/^static FunctionAST *ParseDefinition() {$/;"	f	file:
+ParseDefinition	toy3.cpp	/^static FunctionAST *ParseDefinition() {$/;"	f	file:
+ParseDefinition	toy4.cpp	/^static FunctionAST *ParseDefinition() {$/;"	f	file:
+ParseExpression	toy.cpp	/^static ExprAST *ParseExpression() {$/;"	f	file:
+ParseExpression	toy3.cpp	/^static ExprAST *ParseExpression() {$/;"	f	file:
+ParseExpression	toy4.cpp	/^static ExprAST *ParseExpression() {$/;"	f	file:
+ParseExtern	toy.cpp	/^static PrototypeAST *ParseExtern() {$/;"	f	file:
+ParseExtern	toy3.cpp	/^static PrototypeAST *ParseExtern() {$/;"	f	file:
+ParseExtern	toy4.cpp	/^static PrototypeAST *ParseExtern() {$/;"	f	file:
+ParseIdentifierExpr	toy.cpp	/^static ExprAST *ParseIdentifierExpr() {$/;"	f	file:
+ParseIdentifierExpr	toy3.cpp	/^static ExprAST *ParseIdentifierExpr() {$/;"	f	file:
+ParseIdentifierExpr	toy4.cpp	/^static ExprAST *ParseIdentifierExpr() {$/;"	f	file:
+ParseNumberExpr	toy.cpp	/^static ExprAST *ParseNumberExpr() {$/;"	f	file:
+ParseNumberExpr	toy3.cpp	/^static ExprAST *ParseNumberExpr() {$/;"	f	file:
+ParseNumberExpr	toy4.cpp	/^static ExprAST *ParseNumberExpr() {$/;"	f	file:
+ParseParenExpr	toy.cpp	/^static ExprAST *ParseParenExpr() {$/;"	f	file:
+ParseParenExpr	toy3.cpp	/^static ExprAST *ParseParenExpr() {$/;"	f	file:
+ParseParenExpr	toy4.cpp	/^static ExprAST *ParseParenExpr() {$/;"	f	file:
+ParsePrimary	toy.cpp	/^static ExprAST *ParsePrimary() {$/;"	f	file:
+ParsePrimary	toy3.cpp	/^static ExprAST *ParsePrimary() {$/;"	f	file:
+ParsePrimary	toy4.cpp	/^static ExprAST *ParsePrimary() {$/;"	f	file:
+ParsePrototype	toy.cpp	/^static PrototypeAST *ParsePrototype() {$/;"	f	file:
+ParsePrototype	toy3.cpp	/^static PrototypeAST *ParsePrototype() {$/;"	f	file:
+ParsePrototype	toy4.cpp	/^static PrototypeAST *ParsePrototype() {$/;"	f	file:
+ParseTopLevelExpr	toy.cpp	/^static FunctionAST *ParseTopLevelExpr() {$/;"	f	file:
+ParseTopLevelExpr	toy3.cpp	/^static FunctionAST *ParseTopLevelExpr() {$/;"	f	file:
+ParseTopLevelExpr	toy4.cpp	/^static FunctionAST *ParseTopLevelExpr() {$/;"	f	file:
+Proto	toy3.cpp	/^  PrototypeAST *Proto;$/;"	m	class:__anon2::FunctionAST	file:
+Proto	toy4.cpp	/^  PrototypeAST *Proto;$/;"	m	class:__anon1::FunctionAST	file:
+PrototypeAST	toy.cpp	/^  PrototypeAST(const std::string &name, const std::vector<std::string> &args)$/;"	f	class:__anon3::PrototypeAST
+PrototypeAST	toy.cpp	/^class PrototypeAST {$/;"	c	namespace:__anon3	file:
+PrototypeAST	toy3.cpp	/^  PrototypeAST(const std::string &name, const std::vector<std::string> &args)$/;"	f	class:__anon2::PrototypeAST
+PrototypeAST	toy3.cpp	/^class PrototypeAST {$/;"	c	namespace:__anon2	file:
+PrototypeAST	toy4.cpp	/^  PrototypeAST(const std::string &name, const std::vector<std::string> &args)$/;"	f	class:__anon1::PrototypeAST
+PrototypeAST	toy4.cpp	/^class PrototypeAST {$/;"	c	namespace:__anon1	file:
+RHS	toy3.cpp	/^  ExprAST *LHS, *RHS;$/;"	m	class:__anon2::BinaryExprAST	file:
+RHS	toy4.cpp	/^  ExprAST *LHS, *RHS;$/;"	m	class:__anon1::BinaryExprAST	file:
+TheModule	toy3.cpp	/^static Module *TheModule;$/;"	v	file:
+Token	toy.cpp	/^enum Token {$/;"	g	file:
+Token	toy3.cpp	/^enum Token {$/;"	g	file:
+Token	toy4.cpp	/^enum Token {$/;"	g	file:
+Val	toy3.cpp	/^  double Val;$/;"	m	class:__anon2::NumberExprAST	file:
+Val	toy4.cpp	/^  double Val;$/;"	m	class:__anon1::NumberExprAST	file:
+VariableExprAST	toy.cpp	/^  VariableExprAST(const std::string &name) : Name(name) {}$/;"	f	class:__anon3::VariableExprAST
+VariableExprAST	toy.cpp	/^class VariableExprAST : public ExprAST {$/;"	c	namespace:__anon3	file:
+VariableExprAST	toy3.cpp	/^  VariableExprAST(const std::string &name) : Name(name) {}$/;"	f	class:__anon2::VariableExprAST
+VariableExprAST	toy3.cpp	/^class VariableExprAST : public ExprAST {$/;"	c	namespace:__anon2	file:
+VariableExprAST	toy4.cpp	/^  VariableExprAST(const std::string &name) : Name(name) {}$/;"	f	class:__anon1::VariableExprAST
+VariableExprAST	toy4.cpp	/^class VariableExprAST : public ExprAST {$/;"	c	namespace:__anon1	file:
+dump	toy4.cpp	/^void MCJITHelper::dump() {$/;"	f	class:MCJITHelper
+getFunction	toy4.cpp	/^Function *MCJITHelper::getFunction(const std::string FnName) {$/;"	f	class:MCJITHelper
+getModuleForNewFunction	toy4.cpp	/^Module *MCJITHelper::getModuleForNewFunction() {$/;"	f	class:MCJITHelper
+getNextToken	toy.cpp	/^static int getNextToken() {$/;"	f	file:
+getNextToken	toy3.cpp	/^static int getNextToken() {$/;"	f	file:
+getNextToken	toy4.cpp	/^static int getNextToken() { return CurTok = gettok(); }$/;"	f	file:
+getPointerToFunction	toy4.cpp	/^void *MCJITHelper::getPointerToFunction(Function *F) {$/;"	f	class:MCJITHelper
+getSymbolAddress	toy4.cpp	/^uint64_t HelpingMemoryManager::getSymbolAddress(const std::string &Name) {$/;"	f	class:HelpingMemoryManager
+getSymbolAddress	toy4.cpp	/^void *MCJITHelper::getSymbolAddress(const std::string &Name) {$/;"	f	class:MCJITHelper
+gettok	toy.cpp	/^static int gettok() {$/;"	f	file:
+gettok	toy3.cpp	/^static int gettok() {$/;"	f	file:
+gettok	toy4.cpp	/^static int gettok() {$/;"	f	file:
+main	toy.cpp	/^int main() {$/;"	f
+main	toy3.cpp	/^int main() {$/;"	f
+main	toy4.cpp	/^int main() {$/;"	f
+override	toy4.cpp	/^  virtual uint64_t getSymbolAddress(const std::string &Name) override;$/;"	m	class:HelpingMemoryManager	file:
+putchard	toy3.cpp	/^double putchard(double X) {$/;"	f
+putchard	toy4.cpp	/^extern "C" double putchard(double X) {$/;"	f
+tok_def	toy.cpp	/^  tok_def = -2, tok_extern = -3,$/;"	e	enum:Token	file:
+tok_def	toy3.cpp	/^  tok_def = -2, tok_extern = -3,$/;"	e	enum:Token	file:
+tok_def	toy4.cpp	/^  tok_def = -2,$/;"	e	enum:Token	file:
+tok_eof	toy.cpp	/^  tok_eof = -1,$/;"	e	enum:Token	file:
+tok_eof	toy3.cpp	/^  tok_eof = -1,$/;"	e	enum:Token	file:
+tok_eof	toy4.cpp	/^  tok_eof = -1,$/;"	e	enum:Token	file:
+tok_extern	toy.cpp	/^  tok_def = -2, tok_extern = -3,$/;"	e	enum:Token	file:
+tok_extern	toy3.cpp	/^  tok_def = -2, tok_extern = -3,$/;"	e	enum:Token	file:
+tok_extern	toy4.cpp	/^  tok_extern = -3,$/;"	e	enum:Token	file:
+tok_identifier	toy.cpp	/^  tok_identifier = -4, tok_number = -5$/;"	e	enum:Token	file:
+tok_identifier	toy3.cpp	/^  tok_identifier = -4, tok_number = -5$/;"	e	enum:Token	file:
+tok_identifier	toy4.cpp	/^  tok_identifier = -4,$/;"	e	enum:Token	file:
+tok_number	toy.cpp	/^  tok_identifier = -4, tok_number = -5$/;"	e	enum:Token	file:
+tok_number	toy3.cpp	/^  tok_identifier = -4, tok_number = -5$/;"	e	enum:Token	file:
+tok_number	toy4.cpp	/^  tok_number = -5$/;"	e	enum:Token	file:
+~ExprAST	toy.cpp	/^  virtual ~ExprAST() {}$/;"	f	class:__anon3::ExprAST
+~ExprAST	toy3.cpp	/^  virtual ~ExprAST() {}$/;"	f	class:__anon2::ExprAST
+~ExprAST	toy4.cpp	/^  virtual ~ExprAST() {}$/;"	f	class:__anon1::ExprAST
+~HelpingMemoryManager	toy4.cpp	/^  virtual ~HelpingMemoryManager() {}$/;"	f	class:HelpingMemoryManager
+~MCJITHelper	toy4.cpp	/^MCJITHelper::~MCJITHelper() {$/;"	f	class:MCJITHelper
